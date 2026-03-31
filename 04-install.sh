@@ -12,9 +12,9 @@ fi
 VALIDATE(){
 
     if [ $1 -eq 0 ]; then
-        echo -e " e[32mInstallation of $2 is successful"
+        echo -e " e[32m Installation of $2 is successful"
     else
-        echo -e " e[31mInstallation of $2 is failed"
+        echo -e " e[31m Installation of $2 is failed"
         exit 1
 fi
 

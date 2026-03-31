@@ -1,8 +1,8 @@
 #!/bin/bash
 
-USER-ID=$(id -u)
+USER_ID=$(id -u)
 
-if [ $USER-ID -eq 0 ]; then
+if [ $USER_ID -eq 0 ]; then
     echo "you have root  privilages for installing packages"
 else
     echo "ERROR:: you don't have root privilages for instalinng packages"

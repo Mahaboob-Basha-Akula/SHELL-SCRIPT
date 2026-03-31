@@ -12,9 +12,9 @@ fi
 VALIDATE(){
 
     if [ $1 -eq 0 ]; then
-        echo "Installation of $2 is successful"
+        echo -e " e[32mInstallation of $2 is successful"
     else
-        echo "Installation of $2 is failed"
+        echo -e " e[31mInstallation of $2 is failed"
         exit 1
 fi
 
@@ -22,18 +22,18 @@ fi
 
 dnf list installed mysql
 if [ $? -eq 0 ]; then 
-    echo "you already have the package"
+    echo -e " \e[32m you already have the package"
 else 
-    echo "You don't have mysql so, installing"
+    echo -e " \e[31m You don't have mysql so, installing"
 fi
 dnf install mysql -y
 VALIDATE $? "MySql"
 
 dnf list installed nginx
 if [ $? -eq 0 ]; then 
-    echo "you already have nginx package"
+    echo -e "\e[32m you already have nginx package"
 else
-    echo "you don't have nginx so, installing"
+    echo -e "\e[31m you don't have nginx so, installing"
 fi
 dnf install nginx -y
 VALIDATE $? "nginx"

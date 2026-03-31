@@ -34,6 +34,7 @@ if [ $? -eq 0 ]; then
     echo "you already have nginx package"
 else
     echo "you don't have nginx so, installing"
+fi
 dnf install nginx -y
 VALIDATE $? "nginx"
 

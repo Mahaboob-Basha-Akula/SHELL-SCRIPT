@@ -20,8 +20,20 @@ fi
 
 }
 
+dnf list installed mysql
+if [ $? -eq 0 ]; then 
+    echo "you already have the package"
+else 
+    echo "You don't have mysql so, installing"
+fi
 dnf install mysql -y
 VALIDATE $? "MySql"
+
+dnf list installed nginx
+if [ $? -eq 0 ]; then 
+    echo "you already have nginx package"
+else
+    echo "you don't have nginx so, installing"
 dnf install nginx -y
 VALIDATE $? "nginx"
 

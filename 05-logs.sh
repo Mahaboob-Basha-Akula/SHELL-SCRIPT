@@ -7,7 +7,7 @@ Y="\e[33m"
 
 
 LOG_FOLDER="/var/log/shell_script"
-SCRIPT_NAME=$( echo  $0 | cut -d "." -f1)
+SCRIPT_NAME=$( echo  $0 | cut -d "." -f1 )
 LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME.log"
 
 USER_ID=$(id -u)

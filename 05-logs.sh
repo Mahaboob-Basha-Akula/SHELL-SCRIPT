@@ -18,7 +18,7 @@ mkdir -p $LOG_FOLDER
 
 echo "Script execution starts at: $(date)"
 
-if [$USER_ID -eq 0 ]; then 
+if [ $USER_ID -eq 0 ]; then 
     echo -e " $G You have root privilages $N"
 else
     echo -e " $R ERROR:: Need root privilages to install the packages $N"

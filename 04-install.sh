@@ -3,18 +3,18 @@
 USER_ID=$(id -u)
 
 if [ $USER_ID -eq 0 ]; then
-    echo "you have root  privilages for installing packages"
+    echo -e "\e[32m you have root  privilages for installing packages $N"
 else
-    echo "ERROR:: you don't have root privilages for instalinng packages"
+    echo -e "\e[31m ERROR:: you don't have root privilages for instalinng packages $N"
     exit 1
 fi
 
 VALIDATE(){
 
     if [ $1 -eq 0 ]; then
-        echo -e " e[32m Installation of $2 is successful"
+        echo " Installation of $2 is successful"
     else
-        echo -e " e[31m Installation of $2 is failed"
+        echo " Installation of $2 is failed"
         exit 1
 fi
 
@@ -22,9 +22,9 @@ fi
 
 dnf list installed mysql
 if [ $? -eq 0 ]; then 
-    echo -e " \e[32m you already have the package "
+    echo -e " \e[32m you already have the package $N "
 else 
-    echo -e " \e[31m You don't have mysql so, installing "
+    echo -e " \e[31m You don't have mysql so, installing $N "
 fi
 dnf install mysql -y
 VALIDATE $? "MySql"

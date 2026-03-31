@@ -11,11 +11,11 @@ fi
 
 VALIDATE(){
 
-    if [$1 -eq 0 ]; then
-    echo "Installation of $2 is successful"
-else
-    echo "Installation of $2 is failed"
-    exit 1
+    if [ $1 -eq 0 ]; then
+        echo "Installation of $2 is successful"
+    else
+        echo "Installation of $2 is failed"
+        exit 1
 fi
 
 }

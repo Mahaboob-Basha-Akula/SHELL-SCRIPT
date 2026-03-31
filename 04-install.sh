@@ -1,8 +1,10 @@
 #!/bin/bash
 
-N="\e[0m"
-R="\e[31m"
-G="\e[32m"
+N="\e[0m"  #clour code for white
+R="\e[31m" # colour code for red
+G="\e[32m" # colour code for green
+Y="\e[33m" # colour code for yellow
+
 USER_ID=$(id -u)
 
 if [ $USER_ID -eq 0 ]; then
@@ -25,7 +27,7 @@ fi
 
 dnf list installed mysql
 if [ $? -eq 0 ]; then 
-    echo -e " $G you already have the package $N "
+    echo -e " $G you already have the package $N, $G So SKIPPING $N "
 else 
     echo -e " $R You don't have mysql so, installing $N "
 fi
@@ -34,7 +36,7 @@ VALIDATE $? "MySql"
 
 dnf list installed nginx
 if [ $? -eq 0 ]; then 
-    echo -e " $G you already have nginx package $N "
+    echo -e " $G you already have nginx package $N, $G So SKIPPING $N "
 else
     echo -e " $R you don't have nginx so, installing $N "
 fi

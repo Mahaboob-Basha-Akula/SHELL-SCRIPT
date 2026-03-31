@@ -22,18 +22,18 @@ fi
 
 dnf list installed mysql
 if [ $? -eq 0 ]; then 
-    echo -e " \e[32m you already have the package"
+    echo -e " \e[32m you already have the package \"
 else 
-    echo -e " \e[31m You don't have mysql so, installing"
+    echo -e " \e[31m You don't have mysql so, installing \"
 fi
 dnf install mysql -y
 VALIDATE $? "MySql"
 
 dnf list installed nginx
 if [ $? -eq 0 ]; then 
-    echo -e "\e[32m you already have nginx package"
+    echo -e " \e[32m you already have nginx package \"
 else
-    echo -e "\e[31m you don't have nginx so, installing"
+    echo -e " \e[31m you don't have nginx so, installing \"
 fi
 dnf install nginx -y
 VALIDATE $? "nginx"

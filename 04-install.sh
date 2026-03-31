@@ -1,5 +1,6 @@
 #!/bin/bash
 
+N="\e[0m"
 USER_ID=$(id -u)
 
 if [ $USER_ID -eq 0 ]; then

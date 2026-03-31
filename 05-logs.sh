@@ -26,7 +26,7 @@ else
 fi
 
 VALIDATE(){
-    if [$1 -eq 0 ]; then 
+    if [ $1 -eq 0 ]; then 
         echo "Package $2 installation is success"
     else
         echo "Package $2 installation is failed"

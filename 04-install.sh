@@ -31,9 +31,9 @@ VALIDATE $? "MySql"
 
 dnf list installed nginx
 if [ $? -eq 0 ]; then 
-    echo -e " \e[32m you already have nginx package "
+    echo -e " \e[32m you already have nginx package $N "
 else
-    echo -e " \e[31m you don't have nginx so, installing "
+    echo -e " \e[31m you don't have nginx so, installing $N "
 fi
 dnf install nginx -y
 VALIDATE $? "nginx"

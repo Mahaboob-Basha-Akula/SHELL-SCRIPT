@@ -1,12 +1,14 @@
 #!/bin/bash
 
 N="\e[0m"
+R="\e[31m"
+G="\e[32m"
 USER_ID=$(id -u)
 
 if [ $USER_ID -eq 0 ]; then
-    echo -e "\e[32m you have root  privilages for installing packages $N"
+    echo -e "$G you have root  privilages for installing packages $N"
 else
-    echo -e "\e[31m ERROR:: you don't have root privilages for instalinng packages $N"
+    echo -e "$R ERROR:: you don't have root privilages for instalinng packages $N"
     exit 1
 fi
 
@@ -23,18 +25,18 @@ fi
 
 dnf list installed mysql
 if [ $? -eq 0 ]; then 
-    echo -e " \e[32m you already have the package $N "
+    echo -e " $G you already have the package $N "
 else 
-    echo -e " \e[31m You don't have mysql so, installing $N "
+    echo -e " $R You don't have mysql so, installing $N "
 fi
 dnf install mysql -y
 VALIDATE $? "MySql"
 
 dnf list installed nginx
 if [ $? -eq 0 ]; then 
-    echo -e " \e[32m you already have nginx package $N "
+    echo -e " $G you already have nginx package $N "
 else
-    echo -e " \e[31m you don't have nginx so, installing $N "
+    echo -e " $R you don't have nginx so, installing $N "
 fi
 dnf install nginx -y
 VALIDATE $? "nginx"

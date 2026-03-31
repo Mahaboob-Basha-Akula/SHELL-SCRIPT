@@ -27,7 +27,7 @@ fi
 
 dnf list installed mysql
 if [ $? -eq 0 ]; then 
-    echo -e " $G you already have the package $N, $G So SKIPPING $N "
+    echo -e " $G you already have the package $N, $Y So SKIPPING $N "
 else 
     echo -e " $R You don't have mysql so, installing $N "
 fi
@@ -36,7 +36,7 @@ VALIDATE $? "MySql"
 
 dnf list installed nginx
 if [ $? -eq 0 ]; then 
-    echo -e " $G you already have nginx package $N, $G So SKIPPING $N "
+    echo -e " $G you already have nginx package $N, $Y So SKIPPING $N "
 else
     echo -e " $R you don't have nginx so, installing $N "
 fi

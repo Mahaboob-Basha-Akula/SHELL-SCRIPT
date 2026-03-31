@@ -36,22 +36,22 @@ VALIDATE(){
 }
 
 
-dnf list installed mysql &>>LOG_FILE
+dnf list installed mysql &>> LOG_FILE
 if [ $? -eq 0 ]; then 
     echo -e " $G Package already installed... $N $Y SKIPPING $N"
 else
     echo -e " $Y Installing the package $N"
 fi
-dnf install mysql -y &>>LOG_FILE
+dnf install mysql -y &>> LOG_FILE
 VALIDATE $? "MYSQL"
 
 
-dnf list installed nginx &>>LOG_FILE
+dnf list installed nginx &>> LOG_FILE
 if [ $? -eq 0 ]; then
     echo -e " $G package alaready installed... $N $Y SKIPPING $N"
 else
     echo -e "$Y Installing package $N"
 fi
-dnf install nginx -y &>>LOG_FILE
+dnf install nginx -y &>> LOG_FILE
 VALIDATE $? "NGINX"
 

@@ -34,7 +34,7 @@ VALIDATE(){
 
 for packages in $@
 do
-    dnf list installed $package &>> $LOG_FILE
+    dnf list installed $packages &>> $LOG_FILE
     if [ $? -ne 0 ]; then
         dnf install $packages -y  &>> $LOG_FILE
         VALIDATE $? $packages

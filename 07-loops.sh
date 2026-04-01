@@ -21,15 +21,14 @@ echo "Script execution started at $(date)"
 if [ $USER -ne 0 ]; then 
     echo -e "$R ERROR:: You don't have root privilages, need root privilages $N"
     exit 1
-else
-    echo -e "$G You have root privilages $N"
 fi
 
 VALIDATE(){
     if [ $? -ne 0 ]; then
         echo -e "$R Installing of $package is failed $N"
+        exit 1
     else
-        echo " $G Installing of $package is success $N"
+        echo "$G Installing of $package is success $N"
     fi
 }
 

@@ -315,6 +315,46 @@ VALIDATE $? "mongodb"
 
 
 
+#When we installed some packages already so for that we need to check whether it is installed or not by 
+#dnf list installed package_name
+
+
+#COLOURS FOR SCRIPT::
+
+#RED--> "\e[31m"
+#GREEN--> "\e[32m"
+#YELLOW--> "\e[33m"
+#PINK --> "\e[35m"
+#use command like echo -e "\e[31m Hello world"   # here -e --> we are telling to echo to enable this colour code after \
+# we need to use "\e[0m"--> white colour to end the colour like upto what extend we nned to use, at that end use \e[0m"
+#This colour codes will not work in functions.
+
+
+
+#LOGS::
+# when we do some oprations, we need that logs right for what ww have done preiously, so everytime we run the script that logs store in one file.
+# generally logs file is \var\logs so we can create one file with our script name like \var\logs\shell_Script\04-install.log ---> here shell_Script is a directoty and 04-installl.log is a file name
+#
+# So,for that 
+
+
+
+
+#REDIRECTIONS::
+#redirections are used to store the outputs in other files like ls -l > output.log   not showing on display
+# $1 for success
+# $2 for failure
+# $2 for both success and failure
+# when we use "command 1> output.log" if the script run successfully it will store the logs in file, if fails shows on display not store in file when we use 1 before the >
+# when we use "command 2> output.log" if the script fails then only logs will store in file, if it success, logs will not store in a file.
+# but we don't know when command run give success or failure, in that case use "command &> output.log"  here both success and failure logs will store in file
+# ">" will replace the logs with new one
+# But we need all logs so need to use ">>"
+
+
+
+
+
 
 
 

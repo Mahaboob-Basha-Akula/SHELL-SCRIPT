@@ -40,10 +40,10 @@ if [ $? -ne 0 ]; then
     echo -e "$G Installing the package $N"
 else
     echo -e "$P package already exits... $N $Y SKIPPING $N"
-    exit 1
 fi
 dnf  install mysql -y &>> $LOG_FILE
 VALIDATE $? "MYSQL"
+
 
 dnf list installed nginx &>> $LOG_FILE
 if [ $? -ne 0 ]; then 

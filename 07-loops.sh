@@ -28,7 +28,6 @@ fi
 VALIDATE(){
     if [ $? -ne 0 ]; then
         echo -e "$R Installing of $package is failed $N"
-        exit 1
     else
         echo " $G Installing of $package is success $N"
     fi

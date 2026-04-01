@@ -25,10 +25,10 @@ fi
 
 VALIDATE(){
     if [ $? -ne 0 ]; then
-        echo -e "$R Installing of $package is failed $N"
+        echo -e "$R Installing of $packages is failed $N"
         exit 1
     else
-        echo "$G Installing of $package is success $N"
+        echo "$G Installing of $packages is success $N"
     fi
 }
 
@@ -36,10 +36,10 @@ for packages in $@
 do
     dnf list installed $package &>> $LOG_FILE
     if [ $? -ne 0 ]; then
-        dnf install $package -y  &>> $LOG_FILE
-        VALIDATE $? $package
+        dnf install $packages -y  &>> $LOG_FILE
+        VALIDATE $? $packages
     else
-        echo -e "$P $package is already exist... $N $Y SKIPPING $N"
+        echo -e "$P $packages is already exist... $N $Y SKIPPING $N"
     fi
     
 done

@@ -52,11 +52,11 @@ else
     echo -e "$P Package already exits... $N $Y SKIPPING $N"
 fi
 
-dnf list installed nginx
-if [ $? -ne 0 ]; then 
-    echo -e "$G Installing Package $N"
-else
-    echo "$P Package already exits...$N $Y SKIPPING $N"
+# dnf list installed nginx
+# if [ $? -ne 0 ]; then 
+#     echo -e "$G Installing Package $N"
+# else
+#     echo "$P Package already exits...$N $Y SKIPPING $N"
 
 dnf install nginx -y &>> $LOG_FILE
 VALIDATE $? "NGINX"

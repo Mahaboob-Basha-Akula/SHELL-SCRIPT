@@ -353,6 +353,36 @@ VALIDATE $? "mongodb"
 
 
 
+#we discussed upto these topics
+#Variables
+#DataTypes
+#Conditions
+#Functions
+#Exit codes
+#Redirections
+#logs
+#Colour
+
+#in package.sh I have installed 3 packages but in real if someone ask to install more packages this pattern will not help so we have concept called LOOPS.
+#ADVANTAGES::
+    #Less code
+    #Easy to maintain
+    #Effort less
+    #But perromance will not improve, it will same like traditinal way
+
+#LOOPS::
+#Syntax::
+    # for i in {1..20}     #{1..20}--->is called expression
+    #   do
+    #       echo "$1"
+    #   done
+# frist i value take 1 and come to loop, print 1 and i takes 2 comes to loop and print 2 and so on upto limit 20
+
+#Error handling::
+
+#we need to decide can we move with the error or not
+    # Expected error should be handled
+    # Unexpected error should not be handled---> if we not able to handle we need to exit 
 
 
 

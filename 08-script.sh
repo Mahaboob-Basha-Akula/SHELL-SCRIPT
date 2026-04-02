@@ -9,7 +9,7 @@ P="\e[35m"
 USER=$(id -u)
 
 if [ $USER -ne 0 ]; then 
-    echo -e " $R ERROR:: Need root privilages to install packages $N"
+    echo -e "$R ERROR:: Need root privilages to install packages $N"
     exit 1
 fi
 

@@ -36,7 +36,7 @@ if [ $? -ne 0 ]; then
     dnf install nginx -y
     VALIDATE $? "NGINX"
 else
-    echo "Package already exits...$Y SKIPPING $N"
+    echo -e "Package already exits...$Y SKIPPING $N"
 fi
 
 

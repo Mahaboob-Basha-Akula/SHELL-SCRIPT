@@ -5,8 +5,14 @@ G="\e[32m"
 Y="\e[33m"
 P="\e[35m"
 
-
+LOG_FOLDER="/var/log/Shell-script"
+SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
+LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME.log"
 USER=$(id -u)
+
+mkdir -p $LOG_FOLDER
+echo "Script Execution started at $(date)"
+
 
 if [ $USER -ne 0 ]; then 
     echo -e "$R ERROR:: Need root privilages to install packages $N"
@@ -23,9 +29,9 @@ VALIDATE(){
 
 for softwares in $@
 do
-        dnf list installed mysql
+        dnf list installed mysql &>> $LOG_FILE
     if [ $? -ne 0 ]; then
-        dnf install $softwares -y
+        dnf install $softwares -y &>> $LOG_FILE
         VALIDATE $? "$softwares"
     else
         echo -e "$softwares already exits...$Y SKIPPING $N"
